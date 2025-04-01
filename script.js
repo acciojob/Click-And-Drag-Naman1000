@@ -1,5 +1,5 @@
-const container = document.querySelector('.items');
-const cubes = document.querySelectorAll('.item');
+const container = document.querySelector('.container');
+const cubes = document.querySelectorAll('.cube');
 let selectedCube = null;
 let offsetX = 0, offsetY = 0;
 
@@ -8,7 +8,6 @@ cubes.forEach(cube => {
         selectedCube = cube;
         offsetX = e.clientX - cube.getBoundingClientRect().left;
         offsetY = e.clientY - cube.getBoundingClientRect().top;
-        cube.style.position = 'absolute';
         cube.style.zIndex = 1000;
     });
 });
@@ -28,6 +27,7 @@ document.addEventListener('mousemove', (e) => {
     if (x + cubeRect.width > containerRect.right) x = containerRect.right - cubeRect.width;
     if (y + cubeRect.height > containerRect.bottom) y = containerRect.bottom - cubeRect.height;
     
+    selectedCube.style.position = 'absolute';
     selectedCube.style.left = `${x}px`;
     selectedCube.style.top = `${y}px`;
 });

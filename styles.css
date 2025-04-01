@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,7 +19,7 @@ body {
 }
 
 .items {
-  height: 800px;
+  height: 600px;
   padding: 100px;
   width: 100%;
   border: 1px solid white;
